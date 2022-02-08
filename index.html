@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <title>HHSS Screen</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+    <meta name="description" content="Use this HTML basic website three percentage column layout template with the extra stuff on the left, the main content at the center, the navigation menu on the right.">
+    <meta name="generator" content="HAPedit 3.1">
+    <link rel="canonical" href="https://www.w3docs.com/snippets/html/layout_templates/02.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HTML FlexBox Template - Three percentage columns, left extra stuff" />
+    <meta property="og:description" content="Use this HTML basic website three percentage column layout template with the extra stuff on the left, the main content at the center, the navigation menu on the right." />
+    <meta property="og:image" content="https://www.w3docs.com/build/images/logo-amp.png" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="192" />
+    <meta property="og:image:height" content="192" />
+    <meta property="og:image:alt" content="W3dcos" />
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+			background: #71559A;
+			overflow: hidden;
+        }
+
+        body {
+            color: #292929;
+            font: 90% Roboto, Arial, sans-serif;
+            font-weight: 300;
+        }
+
+
+
+.clock {
+    position: absolute;
+    color: #FFF;
+    font-size: 100px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 150px 0;
+}
+
+
+
+        p {
+            padding: 0 10px;
+            line-height: 1.8;
+			height:90%;
+        }
+
+
+
+        div#header {
+            position: relative;
+        }
+
+        div#header h1 {
+            height: 80px;
+            line-height: 80px;
+            margin: 0;
+            padding-left: 10px;
+           
+            color: #292929;
+        }
+
+        div#header a {
+            position: absolute;
+            right: 0;
+            top: 23px;
+            padding: 10px;
+            color: #006;
+        }
+
+      
+        div#footer {
+          
+         
+        }
+
+        div#footer p {
+            padding: 20px 10px;
+			height:100%;
+        }
+
+        div#wrapper {
+            position: relative;
+			  overflow: hidden;
+			  width: 100%;
+			  padding-top: 30%; 
+			  
+        }
+
+        div#content {
+            position: absolute;
+			  top: 0;
+			  left: 0;
+			  bottom: 0;
+			  right: 0;
+			  width: 100%;
+			  height: 100%;
+        }
+
+        div#navigation {
+            float: left;
+            width: 25%;
+            margin-left: -25%;
+        }
+
+
+
+        div#footer {
+            clear: left;
+            width: 100%;
+	    padding-top:4%;
+        }
+		
+		img{
+			object-fit: contain;
+			height:100%;
+			width:100%;
+		}
+		
+		.center {
+		  display: block;
+		  margin-left: auto;
+		  margin-right: auto;
+		  width: 50%;
+		  height: 100%;
+		}
+		
+		
+		.row iframe{
+    		margin:0 auto !important;
+    		display:block;
+		}
+
+		.full{
+			position: fixed;
+			top: 0;
+			left: 0;
+			object-fit: contain;
+			height:100%;
+			width:100%;
+		}
+		
+		.bg {
+			position: fixed;
+			top:0;
+			left:0;
+		  /* The image used */
+		  background-image: url("black-tile.png");
+
+		  /* Full height */
+		  height: 100%; 
+		  width:200%;
+
+		  /* Center and scale the image nicely */
+		  background-position: center;
+		  background-repeat: repeat;
+		  background-size: cover;
+		}
+
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+	
+#announcements p{
+	color: white;
+	font-size:40px;
+    	border-style: solid;
+    	border-width: 5px;
+    	border-color: white;
+    	font-family: "Helvetica", Helvetica, serif;
+    	position: absolute;
+    	left: 30px;
+    	right: 50px;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+		
+		
+</style>
+
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <img src="header.png">
+    </div>
+    <div id="wrapper">
+        <div id="content" >
+			
+			
+			<div class="mySlides fade responsive" id="first" style="display: block;">
+				<div id="clock" class="clock" onload="showTime()">
+				</div>
+			  	<span hidden class="delay">15000</span>
+			</div>
+
+			
+			<div id="announcements">
+			</div>
+			
+        </div>
+    </div>
+   
+    <div id="footer">
+
+	<iframe id="hhssweather" src="weather.html" width="100%" frameBorder="0">Browser not compatible.</iframe>
+		
+    </div>
+</div>
+
+</body>
+	
+<script>
+
+updateSlides();
+	
+var slideIndex = 0;
+var vidIndex = 0;
+var hide = [0];
+showSlides();
+
+function showSlides() {
+  // black out screen after hours
+  var d = new Date();
+  var n = d.getHours();
+  if(n < 6 || n > 15){
+     	 i = 0;
+	 $('body').addClass("bg");
+	  $('#header').hide();
+	  $('#wrapper').hide();
+	  $('#footer').hide();
+	 setTimeout(showSlides, 900000); 
+	  return;
+	  
+  }else{
+	  $('body').removeClass("bg");
+	  $('#header').show();
+	  $('#wrapper').show();
+	  $('#footer').show();
+  }
+	
+  var i;
+  
+  var vids = document.getElementsByClassName("video");
+
+  var slides = document.getElementsByClassName("mySlides");
+  var delays = document.getElementsByClassName("delay");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+	  slideIndex = 1;
+	  updateSlides();
+	  console.log("updating");
+	  vidIndex = 0;
+  }    
+  if(hide[slideIndex-1] == 1){
+  	$('#footer').hide();
+  }else if(hide[slideIndex-1] == 2){
+	$('#footer').hide();
+	try{
+		delays[slideIndex-1].textContent = vids[vidIndex].duration*1000;
+        	vids[vidIndex].pause();
+        	vids[vidIndex].currentTime = 0;
+        	vids[vidIndex].load();
+	}catch(e){
+		delays[slideIndex-1].textContent = 1;
+	}
+	vidIndex++;
+  }else{
+	$('#footer').show();
+  }
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, delays[slideIndex-1].textContent); 
+}
+	
+function updateSlides(){
+	hide = [0];
+	$.get( "https://sheets.googleapis.com/v4/spreadsheets/1KdTdG6enCNyvIcX4H2nQdRpbkyWHg0XJrV-qJOdoNRM/values/ActiveAnnounce!A1:D20?key=AIzaSyBkKGLsbkH98Nf5_pgQuJs71ZfWb_3xIdU", function( data ) {
+  var announcements = data.values;
+  var string = "";
+  if(announcements[0].length > 1){
+	  for(var j = 0; j < announcements.length; j++){
+		 if(data.values[j][2].startsWith("image ")){
+			 string += "<div class=\"mySlides fade responsive center bg\" style=\"display: block;\"><img class=\"full\" src=\"" + data.values[j][2].substring(6) + "\"><span hidden class=\"delay\">15000</span></div>";
+			 hide.push(1);
+		 }else if(data.values[j][2].startsWith("video ")){
+			 string += "<div class=\"mySlides fade responsive center bg\" style=\"display: block;\"><video class=\"full video\" autoplay muted><source src=\"" + data.values[j][2].substring(6) + "\" type=\"video/mp4\" /></video><span hidden class=\"delay\">15000</span></div>";
+			 hide.push(2);
+		 }else{
+		 	string += "<div class=\"mySlides fade responsive\" style=\"display: block;\"><p>" + data.values[j][2] + "</p><span hidden class=\"delay\">15000</span></div>";
+			hide.push(0);
+		 }
+	  }
+	}
+        
+	$('#announcements').empty();
+	$('#announcements').html(string);
+	$('.mySlides').hide();
+	$('#first').show();
+
+});
+
+}
+
+function showTime(){
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+    
+    var mon = date.getMonth();
+    var day = date.getDay();
+    var num = date.getDate();
+    var year = date.getFullYear();
+    
+    var months = ["January","February","March","April","May","June","July", "August","September","October","November","December"];
+    
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    var t = h + ":" + m + " " + session;
+    var dayString = days[day] + " " + months[mon] + " " + num + ", " + year;
+    var time = t+"<br>"+dayString;
+    $('#clock').html(time);    
+
+    
+    setTimeout(showTime, 1000);
+    
+}
+
+showTime();
+
+function updateWeather(){
+        $( '#hhssweather' ).attr( 'src', function ( i, val ) { return val; });
+
+	setTimeout(updateWeather, 3600000);
+}
+
+updateWeather();
+
+</script>
+	
+</html>

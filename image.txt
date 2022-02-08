@@ -1,0 +1,4 @@
+<div class="mySlides fade responsive center bg" style="display: block;">
+   <img class="full" src="turtle.jpg">			
+  <span hidden class="delay">15000</span>
+</div>
