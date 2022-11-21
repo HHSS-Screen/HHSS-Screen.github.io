@@ -303,7 +303,7 @@ function showSlides() {
 	
 function updateSlides(){
 	hide = [0];
-	$.get( "https://sheets.googleapis.com/v4/spreadsheets/1KdTdG6enCNyvIcX4H2nQdRpbkyWHg0XJrV-qJOdoNRM/values/ActiveAnnounce!A1:D20?key=AIzaSyBkKGLsbkH98Nf5_pgQuJs71ZfWb_3xIdU", function( data ) {
+	$.get( "https://sheets.googleapis.com/v4/spreadsheets/1KdTdG6enCNyvIcX4H2nQdRpbkyWHg0XJrV-qJOdoNRM/values/ActiveAnnounce!A1:D50?key=AIzaSyBkKGLsbkH98Nf5_pgQuJs71ZfWb_3xIdU", function( data ) {
   var announcements = data.values;
   var string = "";
   if(announcements[0].length > 1){
